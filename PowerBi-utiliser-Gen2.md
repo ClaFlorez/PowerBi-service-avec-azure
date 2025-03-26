@@ -119,7 +119,5 @@ Ce script permet d’identifier rapidement le meilleur modèle de classification
 
 > 🧠 *Astuce : utilisez un échantillon (`sample_size`) pour réduire le temps de calcul pendant les tests.*
 
----
 
-🎉 Projet réalisé avec succès !
 
