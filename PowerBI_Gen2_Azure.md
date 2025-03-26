@@ -1,4 +1,3 @@
-
 # Utilisation de Power BI Embedded Generation 2 avec Azure
 
 Ce document décrit les étapes essentielles pour intégrer et utiliser **Power BI Embedded Generation 2** dans un projet Azure.
@@ -12,7 +11,7 @@ Power BI Embedded Generation 2 offre une meilleure **scalabilité**, un suivi pl
 ## 🚀 Déploiement du projet dans Azure
 
 ### 1. Création de la ressource Power BI Embedded
-![Création de la ressource](./images/configuracion-project-final-powerbi.PNG)
+![Création de la ressource](images/configuration-project-final-powerbi.PNG)
 
 - Abonnement : Azure Subscription 1
 - Groupe de ressources : CDI-PowerBI-Project
@@ -23,14 +22,14 @@ Power BI Embedded Generation 2 offre une meilleure **scalabilité**, un suivi pl
 > ⚠️ **Attention** : L'étape de validation peut échouer si certaines informations de base sont manquantes.
 
 ### 2. Détails de la ressource
-![Détails de la ressource](./images/otro-visual-fabric.PNG)
+![Détails de la ressource](images/otro-visual-fabric.PNG)
 
 - Statut : Actif
 - Mode de ressource : Embedded Generation 2
 - Administrateur : info@claud-ia.ca
 
 ### 3. Coûts mensuels estimés
-![Coûts Azure](./images/couts-azure.PNG)
+![Coûts Azure](images/couts-azure.PNG)
 
 La tarification varie selon la taille (SKU) choisie. Exemple :
 - `A1` : 750,03 $US/mois
@@ -42,51 +41,60 @@ La tarification varie selon la taille (SKU) choisie. Exemple :
 ## 📊 Intégration avec Power BI Service
 
 ### Chargement et transformation des données avec Power Query
-![Power Query](./images/POWERQUERY.PNG)
 
-Utilisation d'une source CSV externe, transformation des types de colonnes avec `Table.TransformColumnTypes`, gestion des entêtes, etc.
+#### 📥 Étape 1 : Créer un flux de données Gen2
+![Création flux Gen2](images/flux-donnees-gen2.PNG)
 
-### Options de détection des types
-![Détection des types](./images/type-donnes-automatiques.PNG)
+Sélectionner « Flux de données Gen2 » dans la création d'article pour préparer, nettoyer et transformer les données.
 
-- 🔹 **Option recommandée** : détecter les types de colonnes et entêtes pour les sources non structurées selon les paramètres du flux.
+#### 🧾 Étape 2 : Nommer le flux de données
+![Nommer le flux](images/flux-donnees-gen2nouveau.PNG)
 
----
+Donner un nom explicite au flux pour une meilleure organisation. Exemple : `Dataflow 1`.
 
-## 🧰 Machine Learning dans Power BI
+#### 🗃️ Étape 3 : Choisir la source de données
+![Choisir source](images/flux-donnees-gen2-obteneir-donnees2.PNG)
 
-### 1. Notebooks, expériences et modèles ML
-![Notebooks et expériences](./images/creation-modeles.PNG)
+Power BI vous propose plusieurs connecteurs : Excel, SQL Server, SharePoint, Texte/CSV, Dataverse, etc.
 
-- Création de notebooks Spark
-- Enregistrement de modèles entrainés pour des cas professionnels
+#### 🔌 Étape 4 : Connexion via fichier CSV (URL)
+![Connexion CSV](images/source-des-donnees.PNG)
 
-### 2. Sources de données et langages disponibles
-![Sources de données](./images/creation-modeles4.PNG)
+Insérer l’URL directe vers le fichier CSV. Exemple :
+```
+https://raw.githubusercontent.com/pycaret/pycaret/master/datasets/bank.csv
+```
 
-- Intégration avec Apache Spark, T-SQL, Python
-- Accès aux fichiers, entrepôts et lakehouses
+#### 🧰 Étape 5 : Schéma et types de données
+![Schéma](images/affichage-schema.PNG)
 
-### 3. Gestion des versions de modèles ML
-![Versions ML](./images/creation-modeles3.PNG)
+Affichage visuel du schéma, noms de colonnes et types détectés. Utiliser l'éditeur avancé pour personnaliser les transformations.
 
-- Plusieurs versions d'un modèle peuvent être enregistrées
-- Chaque version correspond à une itération du modèle entrainé
+#### 🛠️ Étape 6 : Transformer les données
+![Menu Transformer](images/menu-transformer.PNG)
 
-### 4. Analyse de performance des modèles
-![Comparaison de modèles](./images/PROGRAMME-COMPARE-MODELS.PNG)
+- Modifier les types (entiers, texte, etc.)
+- Filtrer, grouper, renommer les colonnes
+- Appliquer des règles métier
 
-- Métriques affichées : Accuracy, AUC, Recall, F1, etc.
-- Comparaison sur différents échantillons de données
+#### 🏠 Étape 7 : Vue d'ensemble dans le menu Accueil
+![Accueil](images/menu-accueil.PNG)
 
----
+Depuis l'onglet Accueil, vous pouvez gérer les connexions, enregistrer et exécuter votre flux, ou encore exporter un modèle.
 
-## 📄 Conclusion
+#### ⚙️ Étape 8 : Détection des types
+![Détection](images/type-donnes-automatiques.PNG)
 
-La combinaison de Power BI Embedded Gen2 et Azure permet une intégration fluide de solutions d'analyse avancée avec Machine Learning. Elle offre aussi des possibilités d'automatisation et de gestion performantes des ressources cloud.
+Activez la détection automatique des types de colonnes et entêtes pour accélérer la préparation des données.
 
-> 💡 Astuce : Surveillez les coûts régulièrement dans le portail Azure pour éviter des dépassements inattendus.
+#### 🧭 Étape 9 : Interface principale de Power Query
+![Interface Power Query](images/flux-donnees-gen2-obteneir-donnees.PNG)
 
----
+Vue centrale pour manipuler et transformer les données. Possibilité d'importer depuis un modèle Power Query existant.
 
-🎉 Projet réalisé avec succès !
+#### ⏸️ Étape 10 : Mise en pause de la capacité Fabric (optionnel)
+![Pause Fabric](images/pause-fabric-capacity.PNG)
+
+Dans le portail Azure, vous pouvez mettre en pause la capacité Fabric pour réduire les coûts hors période d’utilisation.
+
+
