@@ -58,6 +58,3 @@ AttributeError: 'Simple_Imputer' object has no attribute 'target_variable'
 
 Projet sous licence MIT — libre d’utilisation, modification et distribution.
 
----
-
-🎯 Réalisé avec ❤️ par [TonNom] — n’hésite pas à contribuer ou forker le projet !
