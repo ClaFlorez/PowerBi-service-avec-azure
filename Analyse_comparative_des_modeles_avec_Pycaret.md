@@ -148,7 +148,7 @@ La commande `compare_models()` retourne automatiquement le meilleur modèle bas�
 
 ### 📊 Graphique de performance
 
-![Graphique de performances](./metric.PNG)
+![Graphique de performances](./images/metric.PNG)
 
 Ce graphique illustre les performances du modèle de **régression logistique** selon différentes proportions de l'échantillon d'entraînement (de 10 % à 100 %).
 
