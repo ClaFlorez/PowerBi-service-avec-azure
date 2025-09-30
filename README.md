@@ -35,7 +35,7 @@ Le script :
 
 ## 📊 Exemple de sortie
 
-![Graphique de performances](./metric.PNG)
+![Graphique de performances](images/metric.PNG)
 
 Le modèle le plus performant est affiché avec ses métriques : `Accuracy`, `Recall`, `F1`, etc.
 
